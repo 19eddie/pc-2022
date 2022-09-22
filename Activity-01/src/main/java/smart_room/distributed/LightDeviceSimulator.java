@@ -9,9 +9,9 @@ import smart_room.*;
 public class LightDeviceSimulator implements LightDevice {
 
 	private LightSimFrame frame;
-	private String lightID;
+	private final String lightID;
 	
-	LightDeviceSimulator(String lightID){
+	public LightDeviceSimulator(String lightID){
 		this.lightID = lightID;
 	}
 	

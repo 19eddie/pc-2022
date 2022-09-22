@@ -9,16 +9,15 @@ import smart_room.*;
 public class PresDetectSensorSimulator extends AbstractEventSource implements PresenceDetectionDevice {
 
 	private boolean isPresenceDetected;
-	private String sensorId;
-	private PresenceDetectionFrame frame;
-	
-	PresDetectSensorSimulator(String sensorId){
+	private final String sensorId;
+
+	public PresDetectSensorSimulator(String sensorId){
 		this.sensorId = sensorId;
 		isPresenceDetected = false;
 	}
 	
 	public void init() {
-		frame = new PresenceDetectionFrame(this, sensorId);
+		PresenceDetectionFrame frame = new PresenceDetectionFrame(this, sensorId);
 		frame.display();
 	}
 	

@@ -9,15 +9,14 @@ import smart_room.*;
 public class LuminositySensorSimulator  extends AbstractEventSource implements LuminositySensorDevice {
 
 	private double currentLuminosityLevel;
-	private String sensorId;
-	private LuminositySensorFrame frame;
-	
-	LuminositySensorSimulator(String sensorId){
+	private final String sensorId;
+
+	public LuminositySensorSimulator(String sensorId){
 		this.sensorId = sensorId;
 	}
 	
 	public void init() {
-		frame = new LuminositySensorFrame(this,sensorId);
+		LuminositySensorFrame frame = new LuminositySensorFrame(this, sensorId);
 		frame.display();
 	}
 	
