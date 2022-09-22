@@ -1,0 +1,6 @@
+/.idea
+/.gradle
+/gradlew
+/gradle/wrapper/gradle-wrapper.properties
+/build/tmp/compileJava/previous-compilation-data.bin
+/gradlew.bat
