@@ -9,7 +9,7 @@ public class SinglelBoardSimulator extends AbstractEventSource implements LightD
 	private double currentLuminosityLevel;
 	private boolean isPresenceDetected;
 
-	SinglelBoardSimulator(){	
+	public SinglelBoardSimulator(){
 	}
 	
 	public void init() {

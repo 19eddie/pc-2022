@@ -1,6 +1,6 @@
-package smart_room.centralized;
+package smart_room.centralized.consegna;
 
-import smart_room.Event;
+import smart_room.centralized.SinglelBoardSimulator;
 
 public class AgentSimulator extends Thread{
 
