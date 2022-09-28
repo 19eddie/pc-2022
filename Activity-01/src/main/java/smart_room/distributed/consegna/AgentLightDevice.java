@@ -35,11 +35,12 @@ public class AgentLightDevice extends AbstractVerticle {
                         updateLightStatus();
                     })
                     .subscribe("esiot-2122_presence", 2);
-            client.publishHandler(s -> {
-                        System.out.println("There are new message in topic: " + s.topicName());
-                        System.out.println("Content(as string) of the message: " + s.payload().toString());
-                        System.out.println("QoS: " + s.qosLevel());
-                        luminosity = Double.valueOf(s.payload().toString());
+
+            client.publishHandler(f -> {
+                        System.out.println("There are new message in topic: " + f.topicName());
+                        System.out.println("Content(as string) of the message: " + f.payload().toString());
+                        System.out.println("QoS: " + f.qosLevel());
+                        luminosity = Double.valueOf(f.payload().toString());
                         updateLightStatus();
                     })
                     .subscribe("esiot-2122_luminosity", 2);
@@ -49,8 +50,10 @@ public class AgentLightDevice extends AbstractVerticle {
     private void updateLightStatus(){
         if(luminosity < 0.50 && presence.equals("presenceDetected")){
             ld.on();
+            log("luce on");
         } else {
             ld.off();
+            log("luce off");
         }
     }
     private void log(String msg) {
